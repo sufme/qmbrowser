@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李太白骑自行下江南</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            font-family: 'SimSun', 'Microsoft YaHei', sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        svg {
+            display: block;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+        .poem {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">李太白骑自行下江南</div>
+        <svg width="100%" height="100%" viewBox="0 0 1200 800">
+            <!-- 背景：江南水乡 -->
+            <rect width="100%" height="100%" fill="#87CEEB" />
+
+            <!-- 江南山脉 -->
+            <path d="M0,400 Q300,300 600,350 T1200,300 L1200,800 L0,800 Z" fill="#556B2F" />
+            <path d="M0,450 Q400,350 800,400 T1200,350 L1200,800 L0,800 Z" fill="#658B38" />
+
+            <!-- 江南水域 -->
+            <path d="M0,600 Q300,550 600,580 T1200,550 L1200,800 L0,800 Z" fill="#4682B4" />
+
+            <!-- 水波纹动画 -->
+            <circle cx="200" cy="650" r="50" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2">
+                <animate attributeName="cx" values="200;400;600;800;1000" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="650;640;650;640;650" dur="10s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.5;1" dur="5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="400" cy="640" r="30" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2">
+                <animate attributeName="cx" values="400;600;800;1000;1200" dur="25s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="640;650;640;650;640" dur="12s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite" />
+            </circle>
+
+            <!-- 云朵 -->
+            <ellipse cx="100" cy="100" rx="60" ry="30" fill="white">
+                <animate attributeName="cx" values="100;300;500;700;900;1100" dur="30s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="100;90;100;90;100;90" dur="15s" repeatCount="indefinite" />
+            </ellipse>
+            <ellipse cx="300" cy="80" rx="40" ry="20" fill="white">
+                <animate attributeName="cx" values="300;500;700;900;1100" dur="25s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="80;70;80;70;80" dur="12s" repeatCount="indefinite" />
+            </ellipse>
+
+            <!-- 李白骑自行车 -->
+            <g id="libai">
+                <!-- 自行车 -->
+                <line x1="100" y1="550" x2="150" y2="550" stroke="black" stroke-width="3" />
+                <line x1="150" y1="550" x2="140" y2="530" stroke="black" stroke-width="2" />
+                <line x1="150" y1="550" x2="140" y2="570" stroke="black" stroke-width="2" />
+                <circle cx="100" cy="550" r="20" fill="none" stroke="black" stroke-width="3" />
+                <circle cx="150" cy="550" r="20" fill="none" stroke="black" stroke-width="3" />
+                <circle cx="100" cy="550" r="15" fill="black" />
+                <circle cx="150" cy="550" r="15" fill="black" />
+
+                <!-- 李白 -->
+                <g transform="translate(120, 500)">
+                    <!-- 头 -->
+                    <circle cx="0" cy="0" r="15" fill="#FFD700" />
+                    <!-- 身体 -->
+                    <ellipse cx="0" cy="20" rx="10" ry="15" fill="#DC143C" />
+                    <!-- 手臂 -->
+                    <line x1="0" y1="10" x2="-15" y2="20" stroke="#DC143C" stroke-width="3" />
+                    <line x1="0" y1="10" x2="15" y2="20" stroke="#DC143C" stroke-width="3" />
+                    <!-- 腿 -->
+                    <line x1="0" y1="35" x2="-10" y2="50" stroke="#DC143C" stroke-width="3" />
+                    <line x1="0" y1="35" x2="10" y2="50" stroke="#DC143C" stroke-width="3" />
+                    <!-- 脚 -->
+                    <ellipse cx="-10" cy="50" rx="5" ry="3" fill="black" />
+                    <ellipse cx="10" cy="50" rx="5" ry="3" fill="black" />
+                    <!-- 胡须 -->
+                    <line x1="-5" y1="-5" x2="-15" y2="-10" stroke="black" stroke-width="1" />
+                    <line x1="5" y1="-5" x2="15" y2="-10" stroke="black" stroke-width="1" />
+                    <line x1="-5" y1="-5" x2="-15" y2="-5" stroke="black" stroke-width="1" />
+                    <line x1="5" y1="-5" x2="15" y2="-5" stroke="black" stroke-width="1" />
+                </g>
+
+                <!-- 动画：自行车移动 -->
+                <animateTransform
+                    xlink:href="#libai"
+                    attributeName="transform"
+                    type="translate"
+                    from="100 0"
+                    to="1000 0"
+                    dur="30s"
+                    repeatCount="indefinite"
+                />
+            </g>
+
+            <!-- 江南小桥 -->
+            <path d="M200,600 L200,580 L220,580 L220,600" stroke="black" stroke-width="2" fill="none" />
+            <path d="M210,580 L210,570" stroke="black" stroke-width="2" />
+            <path d="M210,570 L215,570" stroke="black" stroke-width="2" />
+
+            <!-- 江南亭子 -->
+            <rect x="800" y="500" width="60" height="40" fill="#FFD700" stroke="black" stroke-width="2" />
+            <rect x="810" y="500" width="40" height="20" fill="#FFD700" />
+            <line x1="800" y1="500" x2="860" y2="480" stroke="black" stroke-width="2" />
+            <line x1="800" y1="540" x2="860" y2="520" stroke="black" stroke-width="2" />
+        </svg>
+        <div class="poem">
+            李太白骑自行，<br>
+            下江南，赏美景。<br>
+            诗意如画，<br>
+            千古传颂。
+        </div>
+    </div>
+</body>
+</html>
